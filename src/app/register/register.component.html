@@ -8,11 +8,12 @@
 </div>
 
 <div class="container">
-    <!-- <form> -->
+    <form>
     <div class="row">
         <div class="col-md-6">
                 <fieldset>
                     <h1>GreenCarWash</h1>
+                    <h3>REGISTRATION</h3>
 
                     <div class="form-group">
                         <label>Email </label>
@@ -27,20 +28,13 @@
                         <input type="password" class="form-control" id="name" [(ngModel)]="custDetails.password" placeholder="Enter password" required>
                       </div>
                     <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()">
-                       <!-- message={{message}};
-                        <div *ngIf="message==='LoggedIn Successfully'"> -->
-                           <!-- <a [routerLink]="['/addDetails']">add</a>  -->
-                         <!-- <a class="nav-link" routerlink="addDetails" routerlinkactive="active"></a> 
-                        </div> --> 
-                        
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="submitNow()">
+                       
                     </div>
-                    <div>
-                        if not registered <a [routerLink]="['/register']">click here</a>
-                    </div>
+                    
                 </fieldset>
             </div>
     </div>
-<!-- </form> -->
+</form>
 
 </div>
