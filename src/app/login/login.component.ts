@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     this.service.login(this.custDetails).subscribe(
       data =>{
         console.log(data);
+        // localStorage.setItem('name',this.custDetails.userName);
         this.router.navigate(['/addDetails']);
       },
       error =>{

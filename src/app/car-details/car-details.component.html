@@ -1,4 +1,7 @@
-<!-- <p>car-details works!</p>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container">
     <form>
     <div class="row">
@@ -11,20 +14,41 @@
                         placeholder="Enter car name"  required>
                       </div>
 
+                      <div class="form-group">
+                        <label for="paymentDetails">Payment Details :</label>
+                        <input type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails" name="paymentDetails" id="txt"
+                        placeholder="select package"  required>
+                      </div>
+
                    <div class="form-group">
-                       <label for="paymentDetails">Payment Details :</label>
-                       <imput type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails" name="paymentDetails" id="txt"
-                       placeholder="select paymentDetails" required></imput>
-                   </div>
+                    <label for="packAge">package :</label>
+                    <input type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge" name="userName" id="txt"
+                    placeholder="select package"  required>
+                    <ul>
+                        <li>one</li>
+                        <li>two</li>
+                    </ul>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="date">Date :</label>
+                    <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
+                    placeholder="select date"  required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="time">Time :</label>
+                    <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
+                    placeholder="select time"  required>
+                  </div>
+                    
 
                     <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()"  ng-click="redirectTo(/addDetails)">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()"  ng-click="redirectTo(/addDetails)">
                     </div>
                 </fieldset>
         </div>
     </div>
 </form>
 
-</div> -->
-
-<p>finallyyyyyyyyyyy</p>
+</div>
