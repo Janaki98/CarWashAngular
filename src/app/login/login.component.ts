@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
 
   custDetails: CustomerDetails= new CustomerDetails("","");
   message: any;
+  uName: "";
+  errorMsg: any;
+  errorcontrol: boolean=false;
   // public redirectUrl: 'login/addDetails';
   
   constructor(private service:UserLoginService, public router:Router){}
@@ -25,12 +28,15 @@ export class LoginComponent implements OnInit {
 
     this.service.login(this.custDetails).subscribe(
       data =>{
-        console.log(data);
-        // localStorage.setItem('name',this.custDetails.userName);
+      //   console.log(JSON.stringify(this.uName));
+      //   localStorage.setItem('name',JSON.stringify(this.uName));
+      //  console.log(localStorage.getItem("name")) ;
         this.router.navigate(['/addDetails']);
       },
       error =>{
-        alert("error occurred");
+        // alert("error occurred");
+        this.errorMsg = this.service;
+        this.errorcontrol = true;
       }
     )
   }

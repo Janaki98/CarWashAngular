@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   custDetails: CustomerDetails= new CustomerDetails("","");
   message: any;
   public errorMsg;
+  errorcontrol: boolean=false;
   constructor(private service:UserLoginService, public router:Router){}
 
   ngOnInit(): void {
@@ -22,12 +23,14 @@ export class RegisterComponent implements OnInit {
     console.log("uyyftfkf");
     this.service.register(this.custDetails).subscribe(
       data =>{
-        console.log(data);
+        // console.log(data);
+        this.message=data;
         this.router.navigate(['/login']);
       },
       error =>{
         this.errorMsg = error.error.message;
-        alert(this.errorMsg);
+        this.errorcontrol = true;
+        // alert(this.errorMsg);
       }
     )
   }

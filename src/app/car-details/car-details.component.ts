@@ -24,7 +24,7 @@ export class CarDetailsComponent implements OnInit {
   public saveDetails(){
     console.log("shffiuefh");
     this.service.addDetails(this.custCarDetails).subscribe(
-      data =>{
+      data =>{this.message=data;
         console.log(data);
       },
       error =>{

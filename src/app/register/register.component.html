@@ -33,7 +33,9 @@
                         <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="submitNow()">
                        
                     </div>
-                    
+                    <div  class="alert alert-danger col-sm-3" *ngIf="errorcontrol">
+                        User Already Exists
+                    </div>
                 </fieldset>
             </div>
     </div>
