@@ -1,8 +1,10 @@
 export class CustomerDetails{
 
-    userName : String;
+    id:String;
+    email : String;
+    name: String;
     password : String;
     
 
-    constructor( userName : String, password : String ){}
+    constructor( email : String, password : String ){}
 }

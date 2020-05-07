@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { UserLoginService } from './user-login.service';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { RegisterComponent } from './register/register.component';
+import { SuccessfulComponent } from './successful/successful.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CarDetailsComponent,
-    RegisterComponent
+    RegisterComponent,
+    SuccessfulComponent
   ],
   imports: [
     BrowserModule,

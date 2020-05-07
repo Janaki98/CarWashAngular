@@ -12,17 +12,24 @@
     <div class="row">
         <div class="col-md-6">
                 <fieldset>
-                    <h1>GreenCarWash</h1>
+                    <h1>Green Car Wash</h1>
                     <h3>REGISTRATION</h3>
 
                     <div class="form-group">
-                        <label for="userName">Email </label>
-                        <input id="userName" name="userName" class="form-control" 
+                        <label for="email">Email </label>
+                        <input id="email" name="email" class="form-control" 
                         pattern="^(.+)@(.+)$"
-                        [(ngModel)]="custDetails.userName" #userName="ngModel"
+                        [(ngModel)]="custDetails.email" #userName="ngModel"
                         placeholder="Enter valid email address" >
-                        <div *ngIf = "userName.invalid" class="alert alert-danger">enter proper mail</div>
+                        <!-- <div *ngIf = "email.invalid" class="alert alert-danger">enter proper mail</div> -->
                     </div>
+
+                    <!-- <div class="form-group">
+                        <label for="userName">Name </label>
+                        <input id="userName" name="userName" class="form-control" 
+                        [(ngModel)]="custDetails.userName" #userName="ngModel"
+                        placeholder="Enter name" >
+                       </div> -->
 
                     <div class="form-group">
                         <label for="password">Password</label>

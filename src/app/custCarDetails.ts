@@ -1,5 +1,7 @@
 export class CustCarDetails{
 
+    custName:String;
+    email:String
     carName : String;
     paymentDetails : String; 
     packAge : String; 
@@ -7,7 +9,7 @@ export class CustCarDetails{
     time : String;
     
 
-    constructor( carName : String,
+    constructor( email:String,carName : String,
         paymentDetails : String,
         packAge : String,
         date: String,

@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   errorcontrol: boolean=false;
   constructor(private service:UserLoginService, public router:Router){}
 
+  // custDetails=new CustomerDetails(this.custDetails.name,this.custDetails.password);
   ngOnInit(): void {
   }
 

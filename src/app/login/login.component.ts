@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginService } from '../user-login.service';
 import { CustomerDetails } from '../customerDetails';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -13,9 +14,11 @@ export class LoginComponent implements OnInit {
 
   custDetails: CustomerDetails= new CustomerDetails("","");
   message: any;
-  uName: "";
+  cuDetail: any;
   errorMsg: any;
   errorcontrol: boolean=false;
+  // uName: any;
+  // id: any;
   // public redirectUrl: 'login/addDetails';
   
   constructor(private service:UserLoginService, public router:Router){}
@@ -28,9 +31,11 @@ export class LoginComponent implements OnInit {
 
     this.service.login(this.custDetails).subscribe(
       data =>{
-      //   console.log(JSON.stringify(this.uName));
-      //   localStorage.setItem('name',JSON.stringify(this.uName));
-      //  console.log(localStorage.getItem("name")) ;
+        this.cuDetail=data;
+        sessionStorage.setItem('name',JSON.stringify(this.cuDetail.name));
+        sessionStorage.setItem('email',JSON.stringify(this.cuDetail.email));
+       console.log(JSON.parse(sessionStorage.getItem("name")));
+       console.log(JSON.parse(sessionStorage.getItem("email")));
         this.router.navigate(['/addDetails']);
       },
       error =>{
@@ -40,4 +45,10 @@ export class LoginComponent implements OnInit {
       }
     )
   }
+  // private handleError(errorresponse: HttpErrorResponse) {
+  //   if (errorresponse.error instanceof ErrorEvent) {
+  //    return  console.log("error : ", errorresponse.error.message);
+  //   }
+  //   return console.log("server side error : ", errorresponse); 
+  // }
 }

@@ -11,17 +11,18 @@ export class UserLoginService {
 
   public redirectUrl: '/addDetails';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public login(custDetails){
-    return this.http.post("http://localhost:8081/customer/login",custDetails);
+  public login(custDetails): Observable<any> {
+    return this.http.post("http://localhost:8081/customer/login", custDetails);
   }
 
-  public register(custDetails){
-    return this.http.post("http://localhost:8081/customer/register",custDetails,{responseType:'text' as 'json'});
+  public register(custDetails) {
+    return this.http.post("http://localhost:8081/customer/register", custDetails, { responseType: 'text' as 'json' });
   }
-  public addDetails(custCarDetails){
+  public addDetails(custCarDetails) {
     console.log("123456");
-    return this.http.post("http://localhost:8081/customer/details",custCarDetails,{responseType:'text' as 'json'})
+    return this.http.post("http://localhost:8081/customer/details", custCarDetails, { responseType: 'text' as 'json' })
   }
+
 }
