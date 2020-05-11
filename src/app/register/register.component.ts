@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  custDetails: CustomerDetails= new CustomerDetails("","");
+  custDetails: CustomerDetails= new CustomerDetails("","","");
   message: any;
   public errorMsg;
   errorcontrol: boolean=false;

@@ -6,5 +6,5 @@ export class CustomerDetails{
     password : String;
     
 
-    constructor( email : String, password : String ){}
+    constructor( email : String, name:String,password : String ){}
 }

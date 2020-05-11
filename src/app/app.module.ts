@@ -10,6 +10,7 @@ import { UserLoginService } from './user-login.service';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessfulComponent } from './successful/successful.component';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SuccessfulComponent } from './successful/successful.component';
     LoginComponent,
     CarDetailsComponent,
     RegisterComponent,
-    SuccessfulComponent
+    SuccessfulComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

@@ -12,14 +12,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  custDetails: CustomerDetails= new CustomerDetails("","");
+  custDetails: CustomerDetails= new CustomerDetails("","","");
   message: any;
   cuDetail: any;
   errorMsg: any;
   errorcontrol: boolean=false;
-  // uName: any;
-  // id: any;
-  // public redirectUrl: 'login/addDetails';
   
   constructor(private service:UserLoginService, public router:Router){}
   ngOnInit(): void {
@@ -32,10 +29,10 @@ export class LoginComponent implements OnInit {
     this.service.login(this.custDetails).subscribe(
       data =>{
         this.cuDetail=data;
-        sessionStorage.setItem('name',JSON.stringify(this.cuDetail.name));
-        sessionStorage.setItem('email',JSON.stringify(this.cuDetail.email));
-       console.log(JSON.parse(sessionStorage.getItem("name")));
-       console.log(JSON.parse(sessionStorage.getItem("email")));
+        localStorage.setItem('name',JSON.stringify(this.cuDetail.name));
+        localStorage.setItem('email',JSON.stringify(this.cuDetail.email));
+       console.log(JSON.parse(localStorage.getItem("name")));
+       console.log(JSON.parse(localStorage.getItem('email')));
         this.router.navigate(['/addDetails']);
       },
       error =>{
