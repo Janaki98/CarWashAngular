@@ -1,6 +1,6 @@
 export class CustCarDetails{
 
-    id:String;
+    _id:String;
     custName:String;
     email:String
     carName : String;

@@ -56,6 +56,10 @@
                         <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()"  >
                     </div>
                     <div class="form-group">
+                      <input class="btn button" type="submit" name="submit_reg" value="delete" (click)="delete()"  >
+                  </div>
+
+                    <div class="form-group">
                           <input type="button" value="view" (click)="viewDetails()">
                           <div class="main">
                             <div class="header">
@@ -69,21 +73,23 @@
                     
                                         <thead class="thead-dark">
                     
-                                            <!-- <th>ID</th> -->
+                                            <th>ID</th>
                                             <th>CarName</th>
                                             <th>Payment Details</th>
                                             <th>Pckage</th>
                                             <th>Date</th>
                                             <th>Time</th>
+                                            <!-- <th>Delete</th> -->
                                         </thead>
                                         <tbody>
                                             <tr *ngFor='let str of list'>
-                                                <!-- <td>{{str.id}}</td> -->
+                                                <td>{{str._id}}</td>
                                                 <td>{{str.carName}}</td>
                                                 <td>{{str.paymentDetails}}</td>
                                                 <td>{{str.packAge}}</td>
                                                 <td>{{str.date}}</td>
                                                 <td>{{str.time}}</td>
+                                                <!-- <td type='button' (click)='deleteDetails()'>Delete</td> -->
                                                 
                                             </tr>
                                         </tbody>

@@ -50,24 +50,24 @@ export class CarDetailsComponent implements OnInit {
     this.list=[];
     this.service.view(this.custCarDetails).subscribe(
       data =>{
-        // this.list=this.list.push(data);
         this.list=data;
       }
-        
-        // localStorage.setItem('carName',JSON.stringify(this.list.carName));
-        // JSON.parse(localStorage.getItem('carName'));
-        // localStorage.setItem('paymentDetails',JSON.stringify(this.list.paymentDetails));
-        // JSON.parse(localStorage.getItem('paymentDetails'));
-        // localStorage.setItem('packAge',JSON.stringify(this.list.packAge));
-        // JSON.parse(localStorage.getItem('packAge'));
-        // localStorage.setItem('date',JSON.stringify(this.list.date));
-        // JSON.parse(localStorage.getItem('date'));
-        // localStorage.setItem('time',JSON.stringify(this.list.time));
-        // JSON.parse(localStorage.getItem('time'));
-        // this.router.navigate(['/view']);
       ,error =>{
         alert("no records found");
       }
     )
+  }
+
+  public delete(){
+    alert('By selecting the particulr ID delete the request');
+    this.router.navigate(['/delete']);
+    // this.service.delete(this.custCarDetails).subscribe(
+    //   data=>{
+    //     this.message=data
+    //   },
+    //   error=>{
+    //     alert("please provide valid CAR ID");
+    //   }
+    // )
   }
   }

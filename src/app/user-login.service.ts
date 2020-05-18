@@ -14,18 +14,22 @@ export class UserLoginService {
   constructor(private http: HttpClient) { }
 
   public login(custDetails): Observable<any> {
-    return this.http.post("http://localhost:8082/customer/login", custDetails);
+    return this.http.post("http://localhost:8083/customer/login", custDetails);
   }
 
   public register(custDetails) {
-    return this.http.post("http://localhost:8082/customer/register", custDetails, { responseType: 'text' as 'json' });
+    return this.http.post("http://localhost:8083/customer/register", custDetails, { responseType: 'text' as 'json' });
   }
   public addDetails(custCarDetails) {
     console.log("123456");
-    return this.http.post("http://localhost:8082/customer/details", custCarDetails, { responseType: 'text' as 'json' })
+    return this.http.post("http://localhost:8083/customer/details", custCarDetails, { responseType: 'text' as 'json' })
   }
 
   public view(custCarDetails){
-    return this.http.post("http://localhost:8082/customer/view", custCarDetails);
+    return this.http.post("http://localhost:8083/customer/view", custCarDetails);
+  }
+
+  public delete(custCarDetails){
+    return this.http.post("http://localhost:8083/customer/delete", custCarDetails, {responseType:  'text' as 'json'});
   }
 }
