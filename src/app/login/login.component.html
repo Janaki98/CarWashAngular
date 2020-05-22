@@ -1,51 +1,55 @@
-
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<div style="text-align: center">
+
+<!-- <div style="text-align: center">
     <h3>{{message}}</h3>
+</div> -->
+
+<h1 id="title">GREEN CAR WASH</h1>
+<div class="header">
+    <a routerLink="/login">login</a>&nbsp; &nbsp;
+    <a routerLink="/register">SignUp</a>
 </div>
+      <img id="image" src="../assets/Mercedes-PNG-Image.png">
+      <h2 id="motive">If you have got the TIME,
+      We have got the SHINE</h2>
 
 <div class="container">
-    <!-- <form> -->
     <div class="row">
         <div class="col-md-6">
-                <fieldset>
-                    <div>
-                        <h1>Green Car Wash</h1>
-                    </div> 
+            <fieldset>
+                <div>
+                    <h3>Login Page</h3>
+                </div>
+                <div class="form-group">
+                    <div><label>Email </label></div>
+                    <input id="email" name="email" class="form-control" pattern="^(.+)@(.+)$"
+                        [(ngModel)]="custDetails.email" #userName="ngModel" placeholder="Enter valid email address">
+                    <!-- <div *ngIf = "email.invalid" class="alert alert-danger">enter proper mail</div> -->
+                </div>
 
-                    <div>
-                        <h3>Login Page</h3>
-                    </div>
-                    <div class="form-group">
-                       <div><label>Email </label></div> 
-                        <input id="email" name="email" class="form-control" pattern="^(.+)@(.+)$"
-                        [(ngModel)]="custDetails.email" #userName="ngModel"
-                        placeholder="Enter valid email address" >
-                        <!-- <div *ngIf = "email.invalid" class="alert alert-danger">enter proper mail</div> -->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="name" [(ngModel)]="custDetails.password" placeholder="Enter password" required>
-                      </div>
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()">    
-                    </div>
-                    <div>
-                        if not registered <a [routerLink]="['/register']">click here</a>
-                    </div>
-                    <div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="name" [(ngModel)]="custDetails.password"
+                        placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()">
+                </div>
+                <div>
+                    if not registered <a [routerLink]="['/register']">click here</a>
+                </div>
+                <!-- <div>
                         delete <a [routerLink]="['/delete']">click here</a>
-                    </div>
-                    <div  class="alert alert-danger col-sm-3" *ngIf="errorcontrol">
-                        Please enter valid Details
-                    </div>
-                </fieldset>
-            </div>
+                    </div> -->
+                <div class="alert alert-danger col-sm-3" *ngIf="errorcontrol">
+                    Please enter valid Details
+                </div>
+            </fieldset>
+        </div>
     </div>
-<!-- </form> -->
+    <!-- </form> -->
 
 </div>

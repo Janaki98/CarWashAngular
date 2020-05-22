@@ -1,6 +1,7 @@
 export class CustCarDetails{
 
     _id:String;
+    image:any;
     custName:String;
     email:String
     carName : String;
@@ -10,7 +11,9 @@ export class CustCarDetails{
     time : String;
     
 
-    constructor( email:String,carName : String,
+    constructor( image:any,
+        email:String,
+        carName : String,
         paymentDetails : String,
         packAge : String,
         date: String,

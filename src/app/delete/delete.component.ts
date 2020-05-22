@@ -9,7 +9,7 @@ import { UserLoginService } from '../user-login.service';
 })
 export class DeleteComponent implements OnInit {
   message: any;
-  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","");
+  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","");
 
   constructor(private service:UserLoginService) { }
 
@@ -22,6 +22,7 @@ export class DeleteComponent implements OnInit {
         this.message=data
       },
       error=>{
+        this.message="";
         alert("please provide valid CAR ID");
       }
     )

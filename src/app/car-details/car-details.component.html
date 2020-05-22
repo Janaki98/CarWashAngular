@@ -1,107 +1,111 @@
-
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<div class="container">
-  <div style="text-align: right;"><h3>welcome {{custName1}}</h3></div>
-
-    <!-- <form> -->
-    <div class="row">
-        <div class="col-md-6">
-                <fieldset>
-                  <h3>
-                    {{message}}
-                  </h3>
-
-                    <div class="form-group">
-                        <label for="carName">CarName :</label>
-                        <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName" id="txt"
-                        placeholder="Enter car name"  required>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="paymentDetails">Payment Details :</label>
-                        <select type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails" name="paymentDetails" id="txt"
-                        placeholder="select paymentDetails"  required>
-                        <option value = "COD">COD</option>
-                      <option value = "CARD">CARD</option>
-                    </select>
-                      </div>
-
-                   <div class="form-group">
-                    <label for="packAge">package :</label>
-                    <select type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge" name="userName" id="txt"
-                    placeholder="select package"  required>
-                      <option value = "Gold">Gold</option>
-                      <option value = "Silver">Silver</option>
-                      <option value = "Daimond">Daimond</option>
-                    </select>
-                    
-                  </div>
-
-                  <div class="form-group">
-                    <label for="date">Date :</label>
-                    <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
-                    placeholder="select date"  required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="time">Time :</label>
-                    <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
-                    placeholder="select time"  required>
-                  </div>
-                    
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()"  >
-                    </div>
-                    <div class="form-group">
-                      <input class="btn button" type="submit" name="submit_reg" value="delete" (click)="delete()"  >
-                  </div>
-
-                    <div class="form-group">
-                          <input type="button" value="view" (click)="viewDetails()">
-                          <div class="main">
-                            <div class="header">
-                                <table class="table">
-                                </table>
-                            </div>
-                            <div class="sub">
-                    
-                                <div class="subdiv">
-                                    <table class="table">
-                    
-                                        <thead class="thead-dark">
-                    
-                                            <th>ID</th>
-                                            <th>CarName</th>
-                                            <th>Payment Details</th>
-                                            <th>Pckage</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <!-- <th>Delete</th> -->
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor='let str of list'>
-                                                <td>{{str._id}}</td>
-                                                <td>{{str.carName}}</td>
-                                                <td>{{str.paymentDetails}}</td>
-                                                <td>{{str.packAge}}</td>
-                                                <td>{{str.date}}</td>
-                                                <td>{{str.time}}</td>
-                                                <!-- <td type='button' (click)='deleteDetails()'>Delete</td> -->
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                    
-                                </div>
-                                </div>
-                                </div>
-                    </div>
-                </fieldset>
-        </div>
-    <!-- </div> -->
-<!-- </form> -->
-
+<h1 id="title">GREEN CAR WASH</h1>
+<div class="header">
+    <a routerLink="/login">logout</a>&nbsp; &nbsp;
+    <!-- <a routerLink="/register">SignUp</a> -->
 </div>
+      <img id="image" src="../assets/Mercedes-PNG-Image.png">
+      <h2 id="motive">If you have got the TIME,
+      We have got the SHINE</h2>
+
+
+<div class="container">
+  <div style="text-align: right;">
+    
+  </div>
+
+  <!-- <form> -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>welcome {{custName1}}</h3>
+      <fieldset>
+        <h3>
+          Add Request
+        </h3>
+
+        <div class="form-group">
+          <label for="image">CarImage :</label>
+          <img [src]="url" alt="" width="100" height="100">
+          <input type="file" (change)="selectFile($event)">
+        </div>
+
+        <div class="form-group">
+          <label for="carName">CarName :</label>
+          <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName"
+            id="txt" placeholder="Enter car name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentDetails">Payment Details :</label>
+          <select type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails"
+            name="paymentDetails" id="txt" placeholder="select paymentDetails" required>
+            <option value="COD">COD</option>
+            <option value="CARD">CARD</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="packAge">package :</label>
+          <select type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge" name="userName"
+            id="txt" placeholder="select package" required>
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option value="Daimond">Daimond</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date :</label>
+          <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
+            placeholder="select date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Time :</label>
+          <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
+            placeholder="select time" required>
+        </div>
+
+        <div class="form-group">
+          <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()">
+        </div>
+        <div class="form-group">
+          <input type="button" value="delete" (click)="delete()">
+          <p>* select particular CAR ID to DELETE request</p>
+        </div>
+
+        <div class="form-group" *ngIf="display">
+          <input type="button" value="view" (click)="viewDetails()">
+  
+                <table class="table">
+                  <thead class="thead-dark">
+                    <th>CAR ID</th>
+                    <th>CarName</th>
+                    <th>Payment Details</th>
+                    <th>Pckage</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <!-- <th>Status</th> -->
+                  </thead>
+                  <tbody>
+                    <tr *ngFor='let str of list'>
+                      <td>{{str._id}}</td>
+                      <td>{{str.carName}}</td>
+                      <td>{{str.paymentDetails}}</td>
+                      <td>{{str.packAge}}</td>
+                      <td>{{str.date}}</td>
+                      <td>{{str.time}}</td>
+                      <!-- <td>pending</td> -->
+                     </tr>
+                  </tbody>
+                </table>
+
+              </div>
+      </fieldset>
+    </div>
+
+  </div>

@@ -15,10 +15,13 @@ export class CarDetailsComponent implements OnInit {
   custDetails: CustomerDetails;
   custName1: any;
   
-  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","");
+  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","");
+  // file: File = this.custCarDetails.image.files[0];
+
   email1: any;
   list: any;
-  
+  url="";
+  display: boolean=false;
 
   constructor(private service:UserLoginService, public router: Router
     ) { }
@@ -28,11 +31,22 @@ export class CarDetailsComponent implements OnInit {
     this.email1=JSON.parse(localStorage.getItem('email'));
   }
 
+selectFile(event){
+  if(event.target.files){
+    var reader = new FileReader()
+    reader.readAsDataURL(event.target.files[0]);
+    alert(this.url);
+    reader.onload = (event:any)=>{
+      this.url=event.target.result
+      alert(this.url);
+    }
+  }
+}
+
   public saveDetails(){
     this.custCarDetails.email=this.email1;
     this.custCarDetails.custName=this.custName1;
-    console.log("1234"+this.custName1);
-    console.log("qwe"+this.custCarDetails.email);
+    this.custCarDetails.image=this.url;
     this.service.addDetails(this.custCarDetails).subscribe(
       data =>{
         this.message=data;
@@ -40,7 +54,7 @@ export class CarDetailsComponent implements OnInit {
       },
       error =>{
       
-        alert("Please fill ALL Details  or 1request at a time ");
+        alert("Please fill ALL Details");
       }
     )
   }
@@ -50,6 +64,7 @@ export class CarDetailsComponent implements OnInit {
     this.list=[];
     this.service.view(this.custCarDetails).subscribe(
       data =>{
+        this.display=true;
         this.list=data;
       }
       ,error =>{
@@ -61,13 +76,5 @@ export class CarDetailsComponent implements OnInit {
   public delete(){
     alert('By selecting the particulr ID delete the request');
     this.router.navigate(['/delete']);
-    // this.service.delete(this.custCarDetails).subscribe(
-    //   data=>{
-    //     this.message=data
-    //   },
-    //   error=>{
-    //     alert("please provide valid CAR ID");
-    //   }
-    // )
   }
   }
