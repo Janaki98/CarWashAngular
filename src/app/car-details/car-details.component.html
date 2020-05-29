@@ -78,10 +78,10 @@
           <p>* select particular CAR ID to DELETE request</p>
         </div>
 
-        <div class="form-group" *ngIf="display">
+        <div class="form-group" >
           <input type="button" value="view" (click)="viewDetails()">
   
-                <table class="table">
+                <table class="table" *ngIf="display">
                   <thead class="thead-dark">
                     <th>CAR ID</th>
                     <th>CarName</th>
@@ -89,7 +89,7 @@
                     <th>Pckage</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <!-- <th>Status</th> -->
+                    <th>Status</th>
                   </thead>
                   <tbody>
                     <tr *ngFor='let str of list'>
@@ -99,7 +99,7 @@
                       <td>{{str.packAge}}</td>
                       <td>{{str.date}}</td>
                       <td>{{str.time}}</td>
-                      <!-- <td>pending</td> -->
+                      <td>pending</td>
                      </tr>
                   </tbody>
                 </table>

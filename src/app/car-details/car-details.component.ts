@@ -35,10 +35,10 @@ selectFile(event){
   if(event.target.files){
     var reader = new FileReader()
     reader.readAsDataURL(event.target.files[0]);
-    alert(this.url);
+    // alert(this.url);
     reader.onload = (event:any)=>{
       this.url=event.target.result
-      alert(this.url);
+      // alert(this.url);
     }
   }
 }
