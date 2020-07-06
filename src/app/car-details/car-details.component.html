@@ -4,7 +4,8 @@
 
 <h1 id="title">GREEN CAR WASH</h1>
 <div class="header">
-    <a routerLink="/login">logout</a>&nbsp; &nbsp;
+  <a id="name">welcome {{custName1}}</a>&nbsp; &nbsp;
+    <a routerLink="/login">logout</a>
     <!-- <a routerLink="/register">SignUp</a> -->
 </div>
       <img id="image" src="../assets/Mercedes-PNG-Image.png">
@@ -20,7 +21,11 @@
   <!-- <form> -->
   <div class="row">
     <div class="col-md-6">
-      <h3>welcome {{custName1}}</h3>
+  
+        <div class="alert alert-success" *ngIf="successDisplay">
+            <h2>"Submitted Successfully"</h2>
+        </div>
+  
       <fieldset>
         <h3>
           Add Request
@@ -99,7 +104,7 @@
                       <td>{{str.packAge}}</td>
                       <td>{{str.date}}</td>
                       <td>{{str.time}}</td>
-                      <td>pending</td>
+                      <td>{{str.status}}</td>
                      </tr>
                   </tbody>
                 </table>

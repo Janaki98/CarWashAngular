@@ -9,7 +9,7 @@ import { UserLoginService } from '../user-login.service';
 })
 export class DeleteComponent implements OnInit {
   message: any;
-  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","");
+  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","","");
 
   constructor(private service:UserLoginService) { }
 

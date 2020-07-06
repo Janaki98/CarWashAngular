@@ -1,7 +1,7 @@
-
+/* 
 .cotainer{
     width: 5000px;
-}
+} */
 fieldset {
     border: thin solid #ccc; 
     width: 600px;
@@ -30,6 +30,21 @@ td,th{
     background-color: yellowgreen;
     font-size: 30px;
 }
+.alert alert-success col-sm-6{
+    width:600px; 
+    margin:0 auto;
+    text-align:center;
+    /* padding-bottom: 5px; */
+}
+/* #name{
+    text-align: left;
+} */
+/* a{
+    text-align: right;
+} */
+h3{
+    text-align: left;
+}
  #image{
     float:left;
     width: 600px;
@@ -37,5 +52,5 @@ td,th{
  }
  #motive{
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
  }

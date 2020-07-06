@@ -15,13 +15,14 @@ export class CarDetailsComponent implements OnInit {
   custDetails: CustomerDetails;
   custName1: any;
   
-  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","");
+  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","","");
   // file: File = this.custCarDetails.image.files[0];
 
   email1: any;
   list: any;
   url="";
   display: boolean=false;
+  successDisplay: boolean=false;
 
   constructor(private service:UserLoginService, public router: Router
     ) { }
@@ -44,13 +45,17 @@ selectFile(event){
 }
 
   public saveDetails(){
+    
+    this.successDisplay=false;
     this.custCarDetails.email=this.email1;
     this.custCarDetails.custName=this.custName1;
     this.custCarDetails.image=this.url;
+    this.custCarDetails.status= "pending";
     this.service.addDetails(this.custCarDetails).subscribe(
       data =>{
         this.message=data;
-        this.router.navigate(['/success']);
+        // this.router.navigate(['/success']);
+        this.successDisplay=true;
       },
       error =>{
       
@@ -60,6 +65,7 @@ selectFile(event){
   }
 
   public viewDetails(){
+    this.successDisplay=false;
     this.custCarDetails.email=this.email1;
     this.list=[];
     this.service.view(this.custCarDetails).subscribe(
@@ -74,6 +80,8 @@ selectFile(event){
   }
 
   public delete(){
+    
+    this.successDisplay=false;
     alert('By selecting the particulr ID delete the request');
     this.router.navigate(['/delete']);
   }

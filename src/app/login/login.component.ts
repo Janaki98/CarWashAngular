@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     let response;
     console.log("entered");
 
+  if(this.custDetails.role==="customer"){
     this.service.login(this.custDetails).subscribe(
       data =>{
         this.cuDetail=data;
@@ -41,11 +42,23 @@ export class LoginComponent implements OnInit {
         this.errorcontrol = true;
       }
     )
+  }else{
+    this.service.admin(this.custDetails).subscribe(
+      data =>{
+        this.cuDetail=data;
+        localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
+       console.log(JSON.parse(localStorage.getItem("name")));
+        console.log(data);
+        this.router.navigate(['/admin']);
+      },
+      error =>{
+      alert("enter correct credentials");
+        this.errorMsg = this.service;
+        this.errorcontrol = true;
+      }
+    )
+
   }
-  // private handleError(errorresponse: HttpErrorResponse) {
-  //   if (errorresponse.error instanceof ErrorEvent) {
-  //    return  console.log("error : ", errorresponse.error.message);
-  //   }
-  //   return console.log("server side error : ", errorresponse); 
-  // }
+  
+}
 }

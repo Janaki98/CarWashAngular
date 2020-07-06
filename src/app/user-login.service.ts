@@ -32,4 +32,8 @@ export class UserLoginService {
   public delete(custCarDetails){
     return this.http.post("http://localhost:8083/customer/delete", custCarDetails, {responseType:  'text' as 'json'});
   }
+
+  public admin(customerDetails){
+    return  this.http.post("http://localhost:8083/admin/login",customerDetails);
+  }
 }
