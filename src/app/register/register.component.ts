@@ -21,18 +21,23 @@ export class RegisterComponent implements OnInit {
   }
 
   public submitNow(){
-    console.log("uyyftfkf");
-    this.service.register(this.custDetails).subscribe(
-      data =>{
-        // console.log(data);
-        this.message=data;
-        this.router.navigate(['/login']);
-      },
-      error =>{
-        this.errorMsg = error.error.message;
-        this.errorcontrol = true;
-        // alert(this.errorMsg);
-      }
-    )
+
+    if(this.custDetails.role==="customer"){
+      this.service.register(this.custDetails).subscribe(
+        data =>{
+          // console.log(data);
+          this.message=data;
+          this.router.navigate(['/login']);
+        },
+        error =>{
+          this.errorMsg = error.error.message;
+          this.errorcontrol = true;
+          // alert(this.errorMsg);
+        }
+      )
+    }else{
+      alert("you DO NOT have permissions for ADMIN REGISTRATION");
+      this.router.navigate(['/login']);
+    }
   }
 }

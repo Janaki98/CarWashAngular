@@ -1,0 +1,53 @@
+<!-- 
+ <h1 id="title">GREEN CAR WASH</h1>
+<div class="header">
+    <a routerLink="/login">login</a>&nbsp; &nbsp;
+    <a routerLink="/register">SignUp</a>
+</div>
+      <img id="image" src="../assets/Mercedes-PNG-Image.png">
+      <h2 id="motive">If you have got the TIME,
+      We have got the SHINE</h2> -->
+
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- <div style="text-align: center">
+    <h3>{{message}}</h3>
+</div> -->
+
+<h1 id="title">GREEN CAR WASH</h1>
+<div class="header">
+    <a routerLink="/login">login</a>&nbsp; &nbsp;
+    <a routerLink="/register">SignUp</a>
+</div>
+      <img id="image" src="../assets/Mercedes-PNG-Image.png">
+      <h2 id="motive">If you have got the TIME,
+      We have got the SHINE</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <fieldset>
+                <div class="form-group">
+                <label>Role</label>
+                            <select input name="role"  class="form-control" 
+                             placeholder="select role">
+                            <option value="customer" selected>Customer
+                                <a routerLink="/login"></a>
+                            </option>
+                            <option value="admin" selected>Admin
+                                <a routerLink="/admin"></a>
+                            </option>
+                            <button>submit</button>
+
+                            </select>
+                        </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-- </form> -->
+
+</div>
+<router-outlet></router-outlet>

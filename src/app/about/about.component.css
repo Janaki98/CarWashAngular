@@ -1,0 +1,84 @@
+p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 1px;
+  }
+  div {
+    border: 1px solid gray;
+    padding: 8px;
+    width:65%;
+    float: right;
+    
+  }
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+.sidebar{
+    position: fixed;
+    width: 300px;
+    height:100%;
+    background: black;
+    
+
+}
+
+.sidebar  ul li{
+     color: white;
+    list-style: none;
+    padding: 15px 10px;
+    
+}
+.sidebar a {
+    color: white;
+    
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+
+h1{
+    text-align: center;
+}
+
+
+th{
+    border: 1px solid;
+    text-align: center;
+    padding:15 px;
+    height: 50px;
+    width:100%;
+}
+td {
+    border: 1px solid;
+    text-align: center;
+    padding:15 px;
+    height: 50px;
+    vertical-align: bottom;
+  }
+
+  .header{
+    padding: 10px;
+    /* horizontal-padding:5px; */
+    text-align: right;
+    background-color: yellowgreen;
+    font-size: 30px;
+  }
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+        width:70%; 
+        margin-left:120%; 
+        margin-right:100%;
+        border-collapse: collapse;
+        border:1px solid black;
+        width: 100%;
+       
+       }
+.form{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin:70px;
+    
+}       

@@ -1,0 +1,28 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="header">
+  <a id="name">welcome {{washerName}}</a>&nbsp; &nbsp;
+    <a routerLink="/login">logout</a>
+    <!-- <a routerLink="/profile">Profile</a> -->
+</div>
+
+<div id="sidebar" class="sidebar">
+
+  <ul>
+
+    <li> DASHBOARD</li>
+    <li> <a routerLink="/washview">Customer List </a>
+
+    </li>
+    <li> <a routerLink="/washplan">Service Plan Management</a></li>
+    <li><a  routerLink="/addon">Add-on Management</a></li>
+    <li><a routerLink="/aboutwash">About </a> </li>
+    <li><a routerLink="/washcontact">Contact</a></li>
+
+  </ul>
+
+</div>
+<div class="display">click <a routerLink="/washview">here</a> to view Registered Customers.</div>

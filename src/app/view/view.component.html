@@ -1,0 +1,74 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="header">
+  <a id="name">Welcome to Admin</a>&nbsp; &nbsp;
+    <a routerLink="/login">logout</a>
+    <!-- <a routerLink="/profile">Profile</a> -->
+</div>
+
+<div id="sidebar" class="sidebar">
+
+  <ul>
+    <li> DASHBOARD</li>
+    <li> <a routerLink="/view">Customer List </a>
+    </li>
+    <li> <a routerLink="/adminplan">Service Plan Management</a></li>
+    <li><a  routerLink="/addon">Add-on Management</a></li>
+    <li><a routerLink="/aboutadmin">About </a> </li>
+    <li><a routerLink="/admincontact">contact</a></li>
+
+  </ul>
+</div>
+<div class="sub">
+  <div class="view">
+    <label>Select Washer
+    <select type="text" class="form-control" id="name" [(ngModel)]="custCarDetails.name" name="userName"
+            id="txt" placeholder="Select Washer" required>
+            <option value="Sai Car Washers">Sai Car Wash</option>
+            <option value="Express car Wash">Express Car Wash</option>
+            <option value="janaki car Wash">Janaki Car Wash</option>
+            <option value="">All Washers List</option>
+            </select></label>
+    <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
+    style="position:absolute; left:80px; top:65px" >
+  </div>  
+    <div class="subdiv" >
+        <div class="form">
+      <table class="center" *ngIf="display" >
+        <!-- <table align="center" *ngIf="display"> -->
+          <!-- <div>{{message}}</div> -->
+
+        <thead class="thead-dark">
+
+          <th>Id</th>
+          <th>Email</th>
+          <th>CarName</th>
+          <th>Payment Details</th>
+          <th>Package</th>
+          <th>Washer Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>status</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let str of list'>
+            <td>{{str._id}}</td>
+            <td>{{str.email}}</td>
+            <td>{{str.carName}}</td>
+            <td>{{str.paymentDetails}}</td>
+            <td>{{str.packAge}}</td>
+            <td>{{str.name}}</td>
+            <td>{{str.date}}</td>
+            <td>{{str.time}}</td>
+            <td>{{str.status}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+    </div>

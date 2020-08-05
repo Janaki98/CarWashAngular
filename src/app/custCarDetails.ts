@@ -10,6 +10,7 @@ export class CustCarDetails{
     date: String; 
     time : String;
     status : String;
+    name:String;
     
 
     constructor( image:any,
@@ -18,5 +19,5 @@ export class CustCarDetails{
         paymentDetails : String,
         packAge : String,
         date: String,
-        time : String, status: String ){}
+        time : String, status: String ,name:String){}
 }

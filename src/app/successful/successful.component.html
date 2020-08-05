@@ -1,19 +1,48 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+ Include the above in your HEAD tag 
 
 <h1 id="title">GREEN CAR WASH</h1>
 <div class="header">
-    <a routerLink="/login">logout</a>&nbsp; &nbsp;
-    <!-- <a routerLink="/register">SignUp</a> -->
+    <a routerLink="/washview">view</a>&nbsp; &nbsp;
+    <a routerLink="/login">logout</a>
+    
 </div>
       <img id="image" src="../assets/Mercedes-PNG-Image.png">
       <h2 id="motive">If you have got the TIME,
-      We have got the SHINE</h2>
+      We have got the SHINE</h2> -->
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      
+      
+      <div class="header">
+        <a id="name">welcome {{washerName}}</a>&nbsp; &nbsp;
+          <a routerLink="/login">logout</a>
+          <!-- <a routerLink="/profile">Profile</a> -->
+      </div>
+      
+      <div id="sidebar" class="sidebar">
+      
+        <ul>
+      
+          <li> DASHBOARD</li>
+          <li> <a routerLink="/washview">Customer List </a>
+      
+          </li>
+          <li> <a routerLink="/washplan">Service Plan Management</a></li>
+          <li><a  routerLink="/addon">Add-on Management</a></li>
+          <li><a routerLink="/aboutwash">About </a> </li>
+          <li><a routerLink="/washcontact">contact</a></li>
+      
+        </ul>
+      
+      </div>
+      
 
-<div class="alert alert-success col-sm-6">
-    <div class="success">
-        <h2>"Submitted Successfully"</h2>
+    <div class="success" >
+        <h2>"Status updated Successfully"</h2>
+        click <a routerLink="/washview">here</a> to view customer list.
     </div>
-</div>
+    

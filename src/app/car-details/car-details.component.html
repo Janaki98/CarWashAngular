@@ -1,12 +1,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<div class="full-height">
 <h1 id="title">GREEN CAR WASH</h1>
 <div class="header">
   <a id="name">welcome {{custName1}}</a>&nbsp; &nbsp;
     <a routerLink="/login">logout</a>
-    <!-- <a routerLink="/register">SignUp</a> -->
+    <!-- <a routerLink="/profile">Profile</a> -->
 </div>
       <img id="image" src="../assets/Mercedes-PNG-Image.png">
       <h2 id="motive">If you have got the TIME,
@@ -18,14 +18,9 @@
     
   </div>
 
-  <!-- <form> -->
   <div class="row">
     <div class="col-md-6">
-  
-        <div class="alert alert-success" *ngIf="successDisplay">
-            <h2>"Submitted Successfully"</h2>
-        </div>
-  
+    
       <fieldset>
         <h3>
           Add Request
@@ -41,6 +36,16 @@
           <label for="carName">CarName :</label>
           <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName"
             id="txt" placeholder="Enter car name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">WasherName :</label>
+          <select type="text" class="form-control" id="name" [(ngModel)]="custCarDetails.name" name="userName"
+            id="txt" placeholder="Select Washer" required>
+            <option value="Sai Car Washers">Sai Car Wash</option>
+            <option value="Express car Wash">Express Car Wash</option>
+            <option value="janaki car Wash">Janaki Car Wash</option>
+            </select>
         </div>
 
         <div class="form-group">
@@ -78,9 +83,13 @@
         <div class="form-group">
           <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()">
         </div>
-        <div class="form-group">
-          <input type="button" value="delete" (click)="delete()">
-          <p>* select particular CAR ID to DELETE request</p>
+
+        <div style="text-align: center">
+          <h3>{{message}}</h3>
+        </div>
+
+        <div style="text-align: center">
+          <h3>{{message1}}</h3>
         </div>
 
         <div class="form-group" >
@@ -88,9 +97,11 @@
   
                 <table class="table" *ngIf="display">
                   <thead class="thead-dark">
+                    <th></th>
                     <th>CAR ID</th>
                     <th>CarName</th>
                     <th>Payment Details</th>
+                    <th>Washer Name</th>
                     <th>Pckage</th>
                     <th>Date</th>
                     <th>Time</th>
@@ -98,19 +109,27 @@
                   </thead>
                   <tbody>
                     <tr *ngFor='let str of list'>
-                      <td>{{str._id}}</td>
+                      <td><input type="radio" name="_id" value="{{str._id}}" (change)="radioSelect($event)"></td>
+                      <td type="radio">{{str._id}}</td>
                       <td>{{str.carName}}</td>
                       <td>{{str.paymentDetails}}</td>
+                      <td>{{str.name}}</td>
                       <td>{{str.packAge}}</td>
                       <td>{{str.date}}</td>
                       <td>{{str.time}}</td>
                       <td>{{str.status}}</td>
                      </tr>
                   </tbody>
+                  <div>
+                    <input type="button" value="delete"
+                        (click)="delete()">
+                  </div>
                 </table>
-
+                
+             
               </div>
       </fieldset>
     </div>
 
   </div>
+</div>

@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./successful.component.css']
 })
 export class SuccessfulComponent implements OnInit {
+  washerName: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.washerName=JSON.parse(localStorage.getItem('name'));
   }
 
 }

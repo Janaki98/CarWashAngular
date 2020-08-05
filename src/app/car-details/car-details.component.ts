@@ -15,7 +15,7 @@ export class CarDetailsComponent implements OnInit {
   custDetails: CustomerDetails;
   custName1: any;
   
-  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","","");
+  custCarDetails: CustCarDetails= new CustCarDetails("","","","","","","","","");
   // file: File = this.custCarDetails.image.files[0];
 
   email1: any;
@@ -23,6 +23,7 @@ export class CarDetailsComponent implements OnInit {
   url="";
   display: boolean=false;
   successDisplay: boolean=false;
+  message1: any;
 
   constructor(private service:UserLoginService, public router: Router
     ) { }
@@ -30,6 +31,7 @@ export class CarDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.custName1=localStorage.getItem("name");
     this.email1=JSON.parse(localStorage.getItem('email'));
+    // this.carId=JSON.parse(localStorage.getItem("_id"));
   }
 
 selectFile(event){
@@ -45,7 +47,8 @@ selectFile(event){
 }
 
   public saveDetails(){
-    
+    this.message=null;
+    this.message1=null;
     this.successDisplay=false;
     this.custCarDetails.email=this.email1;
     this.custCarDetails.custName=this.custName1;
@@ -65,13 +68,17 @@ selectFile(event){
   }
 
   public viewDetails(){
+    this.message=null;
+    this.message1=null;
     this.successDisplay=false;
     this.custCarDetails.email=this.email1;
+ 
     this.list=[];
     this.service.view(this.custCarDetails).subscribe(
       data =>{
         this.display=true;
         this.list=data;
+        // this.custCarDetails=null;
       }
       ,error =>{
         alert("no records found");
@@ -79,10 +86,24 @@ selectFile(event){
     )
   }
 
+
+  radioSelect(event:any){
+    this.custCarDetails._id= event.target.value;
+  }
+
   public delete(){
     
     this.successDisplay=false;
-    alert('By selecting the particulr ID delete the request');
-    this.router.navigate(['/delete']);
+    alert(this.custCarDetails._id);
+    this.service.delete(this.custCarDetails).subscribe(
+      data=>{
+        this.message1=data
+      },
+      error=>{
+        this.message1="";
+        alert("please provide valid CAR ID");
+      }
+    )
   }
   }
+  

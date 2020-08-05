@@ -3,6 +3,7 @@ import { UserLoginService } from '../user-login.service';
 import { CustomerDetails } from '../customerDetails';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { WasherDetails } from '../washerDetails';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   custDetails: CustomerDetails= new CustomerDetails("","","");
+  // washDetails: WasherDetails=new WasherDetails("","","");
   message: any;
   cuDetail: any;
   errorMsg: any;
@@ -42,9 +44,10 @@ export class LoginComponent implements OnInit {
         this.errorcontrol = true;
       }
     )
-  }else{
+  }else if(this.custDetails.role==="admin"){
     this.service.admin(this.custDetails).subscribe(
       data =>{
+        alert("innnn");
         this.cuDetail=data;
         localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
        console.log(JSON.parse(localStorage.getItem("name")));
@@ -58,6 +61,20 @@ export class LoginComponent implements OnInit {
       }
     )
 
+  }else{
+    this.service.washer(this.custDetails).subscribe(
+      data =>{
+        this.cuDetail=data;
+        localStorage.setItem('name',JSON.stringify(this.cuDetail.name));
+        console.log(this.cuDetail);
+        this.router.navigate(['/washer']);
+      },
+      error =>{
+      alert("enter correct credentials");
+        this.errorMsg = this.service;
+        this.errorcontrol = true;
+      }
+    )
   }
   
 }

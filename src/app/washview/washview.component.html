@@ -1,0 +1,83 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="header">
+  <a id="name">welcome {{washerName}}</a>&nbsp; &nbsp;
+    <a routerLink="/login">logout</a>
+    <!-- <a routerLink="/profile">Profile</a> -->
+</div>
+
+<div id="sidebar" class="sidebar">
+
+  <ul>
+
+    <li> DASHBOARD</li>
+    <li> <a routerLink="/washview">Customer List </a>
+
+    </li>
+    <li> <a routerLink="/washplan">Service Plan Management</a></li>
+    <li><a  routerLink="/addon">Add-on Management</a></li>
+    <li><a routerLink="/aboutwash">About </a> </li>
+    <li><a routerLink="/washcontact">contact</a></li>
+  </ul>
+
+</div>
+
+<div class="sub">
+  <div class="view">
+    <label>Click to VIEW list</label>
+    <input class="btn btn-success" type="submit" name="submit_reg" 
+    value="view" (click)="viewDetails()"
+    style="position:absolute; left:80px; top:20px" >&nbsp;&nbsp;&nbsp;&nbsp;
+   
+  </div>
+  
+    <div class="subdiv">
+        <div class="form">
+          
+      <table class="center" *ngIf="display" >
+        <thead class="thead-dark">
+          <!-- <th>Select ID</th> -->
+          <th>Id</th>
+          <th>Email</th>
+          <th>CarName</th>
+          <th>Payment Details</th>
+          <th>Package</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>status</th>
+          <th>Change Status</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let str of list'>
+              
+            <td contenteditable="false">
+                {{str._id}}</td>
+            <td>{{str.email}}</td>
+            <td>{{str.carName}}</td>
+            <td>{{str.paymentDetails}}</td>
+            <td>{{str.packAge}}</td>
+            <td>{{str.date}}</td>
+            <td>{{str.time}}</td>
+            <td>{{str.status}}</td>
+            <td>
+                <select input name="role"  class="form-control" 
+                            [(ngModel)]="custCarDetails.status" #role="ngModel" placeholder="set status">
+                            <option value="pending" selected>rejectes</option>
+                            <option value="accepted" selected>accepted</option>
+                            <option value="completed" selected>completed</option>
+                            </select>
+            </td>
+            <td>
+                <div><input [(ngModel)]="custCarDetails._id" placeholder="enter the ID"></div>
+                <input type="button" value="submit"
+                        (click)="changeStatus()">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>

@@ -36,4 +36,21 @@ export class UserLoginService {
   public admin(customerDetails){
     return  this.http.post("http://localhost:8083/admin/login",customerDetails);
   }
+
+  public viewToAdmin(custCarDetails){
+    return  this.http.post("http://localhost:8083/admin/view",custCarDetails);
+  }
+
+  public washer(customerDetails){
+    return  this.http.post("http://localhost:8083/washer/login",customerDetails);
+  }
+
+  public viewToWasher(custCarDetails){
+    return  this.http.post("http://localhost:8083/washer/view",custCarDetails);
+  }
+
+  public statusChange(custCarDetails){
+    return this.http.post("http://localhost:8083/washer/change",custCarDetails);
+  }
+
 }
